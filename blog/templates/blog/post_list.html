@@ -8,18 +8,15 @@
             <h1><a href="#">Talk Time</a></h1>
             <p>my first website</p>
         </div>
+        {% for post in posts %}
         <div>
-            <p>Published on 13 march 2020 :)</p>
+            <p>published date:{{post.published_date}}</p>
+            <h1>{{post.title}}</h1>
+            <P>{{post.text|linebreaksbr}}</P>
         </div>
-        <div>
-            <h2><a href="">First Post</a></h2>
-        </div>
-        <div>
-            <p>Hellooo.. guys this is my first post.I know there  is a lot of blog channles, I was just trying to create one </p>
-        </div>
-        <div>
-            <p>published on 13/03/2020</p>
-        </div>
+        {% endfor %}
+       
+      
         
        
     </body>
