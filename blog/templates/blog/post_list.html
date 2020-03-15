@@ -1,23 +1,13 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>talkies</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="#">Talk Time</a></h1>
-            <p>my first website</p>
-        </div>
-        {% for post in posts %}
-        <div>
-            <p>published date:{{post.published_date}}</p>
-            <h1>{{post.title}}</h1>
-            <P>{{post.text|linebreaksbr}}</P>
-        </div>
-        {% endfor %}
-       
-      
-        
-       
-    </body>
-</html>
+
+    {% extends 'blog/base.html' %}
+
+        {% block content %}
+                {% for post in posts %}
+                <div class="details">
+                    <p>published date:{{post.published_date}}</p>
+                    <h2><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></h2>
+                    <P>{{post.text|linebreaksbr}}</P>
+                </div>
+                 {% endfor %}
+        {% endblock %}         
+           
