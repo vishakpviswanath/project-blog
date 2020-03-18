@@ -10,9 +10,18 @@
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
+        <header>
         <div class="page_header">
-            <h1><a href="/">Django Girls Blog</a></h1>
+            <ul>
+                <li><a href="/"  class="logo">Talk Time</a> </li>
+                <li><a href="{% url 'login' %}"  class="login_icon">login</a></li>
+            </ul>
+            
+           
         </div>
+        
+      </header>
+        
         <div class="content container">
             <div class="row">
                 <div class="col-md-8">
@@ -21,9 +30,7 @@
                 </div>
             </div>
         </div>
-        <h1>hello everyone</h1>
-    
-      
+     
         
        
     </body>

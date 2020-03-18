@@ -21,5 +21,51 @@ body{
 }
 .page_header{
     background-color: aquamarine;
-    padding-left: 0px;
+    text-decoration: none;
+    
+    
+}
+ul {
+
+    list-style-type: none;
+    
+}
+ul li{
+
+    display: inline;
+    padding-left: 100px;
+    
+}
+.login_button{
+
+    padding-left: 700px;
+    padding-top: 0px;
+    margin-top: 0%;
+
+}
+
+.new_post{
+
+    text-decoration: none;
+    font-family: 'Lobster';
+    font-size: 200%;
+}
+
+.logo{
+
+    font-family: 'Lobster';
+    color: red;
+    font-size: 350%;
+}
+
+.login_icon{
+
+    font-family: 'Lobster';
+    font-size: 150%;
+    float: right;
+    padding-right: 100px;
+    padding-top: 10px;
+    color: black;
+    
+    
 }
