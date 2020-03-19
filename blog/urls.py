@@ -13,4 +13,5 @@ urlpatterns = [
     path('post/new/', views.post_new, name='post_new'),
     path('login/', auth_views.LoginView.as_view(template_name='blog/login_page.html'), name='login'),
     path('new_home/', views.home, name='home'), 
+    path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
 ]
