@@ -4,32 +4,48 @@
 <html>
     <head>
         <title>talkies</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
-        <header>
-        <div class="page_header">
-            <ul>
-                <li><a href="/"  class="logo">Talk Time</a> </li>
-                <li><a href="{% url 'login' %}"  class="login_icon">login</a></li>
-            </ul>
-            
-           
-        </div>
         
-      </header>
-        
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
+        <div class="row">
+            <div class="col-lg-2">
+                <nav class="navbar bg-light">
+                 <ul class="navbar-nav">
+                    <li class="nav-item1">
+                        <a class="nav-link" href="#" id="color_id">TalkTime</a>
+                    </li>
+                    <li class="nav-item2">
+                        <a class="nav-link" href="{% url 'first_page' %}">home</a>
+                   </li>
+                    <li class="nav-item3">
+                         <a class="nav-link" href="{% url 'post_list' %}">Posts</a>
+                    </li>
+                    <li class="nav-item4">
+                        <a class="nav-link" href="{% url 'login' %}">login</a>
+                    </li>
+                    <li class="nav-item5">
+                        <a class="nav-link" href="{% url 'register' %}">Register</a>
+                    </li>
+                 </ul>
+             </nav>
+            </div>
+
+            <div class="col-lg-10">
+               
                 {% block content %}
                 {% endblock %}
-                </div>
+            
             </div>
         </div>
+            
      
         
        

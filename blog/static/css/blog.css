@@ -1,39 +1,65 @@
-h1 a{
-    color:red;
-    font-family: 'Lobster';
-    padding-left: 20px;
-    text-decoration: none;
-    
-}
+
 body{
+    background-color: rgb(255, 255, 255);
     padding-left: 10px;
-}
-.content{
-    margin-left: 40px;
+    
 }
 .details{
-    padding-left: 0%;
+    padding-left: 100px;
     margin-bottom: 70px;
-    margin-left: 0px;
-}
-.details textarea, .details input{
-    width: 100%;
-}
-.page_header{
-    background-color: aquamarine;
-    text-decoration: none;
-    
     
 }
+
 ul {
 
     list-style-type: none;
+    background-color: rgba(0, 0, 0, 0.979);
+    height: 900px;
+    width: 280px;
     
 }
-ul li{
 
-    display: inline;
+.nav-item1{
+
+    font-family: 'Lobster';
+    font-size: 74px;
+    padding-top: 17px;
+    
+}
+#color_id{
+    color: rgb(245, 80, 20);
+}
+.nav-item2{
+
+    font-family: 'Lobster';
+    font-size: 35px;
     padding-left: 100px;
+    padding-top: 80px;
+    
+}
+.nav-item3{
+
+    font-family: 'Lobster';
+    font-size: 35px;
+    padding-left: 100px;
+    padding-top: 40px;
+    border-style: solid;
+}
+.nav-item4{
+
+    font-family: 'Lobster';
+    font-size: 35px;
+    padding-left: 90px;
+    padding-top: 40px;
+    border-style: solid;
+}
+.nav-item5{
+
+    font-family: 'Lobster';
+    font-size: 35px;
+    padding-left: 90px;
+    padding-top: 40px;
+    border-style: solid;
     
 }
 .login_button{
@@ -50,22 +76,19 @@ ul li{
     font-family: 'Lobster';
     font-size: 200%;
 }
-
-.logo{
-
-    font-family: 'Lobster';
-    color: red;
-    font-size: 350%;
+#content_front_page{
+    padding-top: 350px;
+    padding-left: 300px;
+    background-color: white;
 }
 
-.login_icon{
+#heading{
 
-    font-family: 'Lobster';
-    font-size: 150%;
-    float: right;
-    padding-right: 100px;
-    padding-top: 10px;
-    color: black;
-    
-    
+    font-size: 100px;
+    color: tomato;
+}
+#content_front_description{
+
+    font-family: Georgia;
+    font-style: oblique;
 }
