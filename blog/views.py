@@ -11,6 +11,10 @@ from django.contrib.auth.forms import UserCreationForm
 def first_page(request):
       return render(request, 'blog/first_page.html')
 
+def profile(request):
+      args = {'user': request.user, 'title' : Post.objects.filter( author=request.user)}
+      return render(request, 'blog/profile.html', args)
+
 def post_list(request):
       posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')   
       return render(request, 'blog/post_list.html', {'posts': posts})
@@ -36,9 +40,7 @@ def post_new(request):
             form = PostForm()
             return render(request,'blog/post_edit.html',{'form': form})      
 
-def home(request):
-      posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-      return render(request, 'blog/home.html',{'posts': posts})
+
 
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)

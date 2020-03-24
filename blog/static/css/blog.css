@@ -2,18 +2,32 @@
 body{
     background-color: rgb(255, 255, 255);
     padding-left: 10px;
-    
+   
 }
 .details{
     padding-left: 100px;
     margin-bottom: 70px;
     
 }
+#post_head{
+    padding-left: 200px;
+    font-style: italic;
+}
+#post_title{
+    font-family: 'Lobster';
+    font-size: 35px;
+    
+}
+#published_date{
+    font-family: Calibri;
+    font-size: 20px;
 
-ul {
+}
+
+.navbar-nav{
 
     list-style-type: none;
-    background-color: rgba(0, 0, 0, 0.979);
+    background-color:black;
     height: 900px;
     width: 280px;
     
@@ -22,8 +36,9 @@ ul {
 .nav-item1{
 
     font-family: 'Lobster';
-    font-size: 74px;
+    font-size: 70px;
     padding-top: 17px;
+   
     
 }
 #color_id{
@@ -80,6 +95,7 @@ ul {
     padding-top: 350px;
     padding-left: 300px;
     background-color: white;
+    
 }
 
 #heading{
