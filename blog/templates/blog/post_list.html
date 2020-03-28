@@ -8,7 +8,7 @@
                 {% for post in posts %}
                     
                 <div class="details">
-                    <h4><a href="{% url 'author_profile' pk=post.pk %}">{{post.author}}</a></h4>
+                    <h4><a href="{% url 'author_profile' username=post.author %}">{{post.author}}</a></h4>
                     <h2><a href="{% url 'post_detail' pk=post.pk %}" id="post_title">{{post.title}}</a></h2>
                     <p id="published_date">published date:{{post.published_date}}</p>
                    

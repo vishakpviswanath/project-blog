@@ -19,10 +19,10 @@ def profile(request):
       args = {'user': request.user, 'title' : Post.objects.filter( author=request.user)}
       return render(request, 'blog/profile.html', args)
 
-
-def author_profile(request , pk=None):
-      if pk:
-            user= User.objects.get(pk=pk)
+@login_required
+def author_profile(request , username):
+      if username:
+            user= User.objects.get(username=username)
       else:
             user= request.user
       args={'user': user}           
