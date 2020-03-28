@@ -1,5 +1,7 @@
 from django import forms
 from .models import Post
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserChangeForm
 
 class PostForm(forms.ModelForm):
     class Meta:
@@ -7,3 +9,14 @@ class PostForm(forms.ModelForm):
         fields = ('title','text',)
 
 
+class EditProfile(UserChangeForm):
+
+    class Meta:
+        model = User
+        fields = {
+            'password',
+            'first_name',
+            'email',
+            'last_name',
+            
+        }

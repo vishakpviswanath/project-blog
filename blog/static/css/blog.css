@@ -77,6 +77,25 @@ body{
     border-style: solid;
     
 }
+.nav-item6{
+
+    font-family: 'Lobster';
+    font-size: 35px;
+    padding-left: 70px;
+    padding-top: 40px;
+    border-style: solid;
+    
+}
+.nav-item7{
+
+    font-family: 'Lobster';
+    font-size: 35px;
+    padding-left: 63px;
+    padding-top: 40px;
+    border-style: solid;
+    
+}
+
 .login_button{
 
     padding-left: 700px;

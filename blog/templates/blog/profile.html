@@ -1,12 +1,14 @@
 {% extends 'blog/base.html' %}
 {% block content %}
 
-    {{ user }}
+
+    
  
     <body>
         <div class="new_post">
-        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span>Add post</a>
-        <h1>hello everyone</h1>
+       
+       
+        <h1>hello {{ user }} </h1>
         </div>
         {% for post in title %}
         <div class="details">
