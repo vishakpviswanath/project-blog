@@ -1,71 +1,48 @@
 {% load static %}
 <!DOCTYPE html>
-
 <html>
     <head>
         <title>talkies</title>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-        
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}" type="text/css">
     </head>
     <body>
         
-        <div class="row">
+             
+        
             {% if user.is_authenticated %}
-            <div class="col-lg-2">
-                <nav class="navbar bg-light">
-                 <ul class="navbar-nav">
-                    <li class="nav-item1">
-                        <a class="nav-link" href="#" id="color_id">TalkTime</a>
-                    </li>
-                    <li class="nav-item2">
-                        <a class="nav-link" href="{% url 'first_page' %}">home</a>
-                   </li>
-                    <li class="nav-item3">
-                         <a class="nav-link" href="{% url 'post_list' %}">Posts</a>
-                    </li>
-                    <li class="nav-item4">
-                        <a class="nav-link" href="{% url 'logout' %}">logout</a>
-                    </li>
-                    <li class="nav-item6">
-                        <a href="{% url 'post_new' %}">Add post</a>
-                    </li>
-                    <li class="nav-item7">
-                         <a href="{% url 'profile_edit' %}">edit profile</a>
-                    </li>
-                   
-                 </ul>
-             </nav>
-            </div>
+
+                <div class="topnav">
+                    <a id="logo">slacker</a>
+                  <a id="nav" href="{% url 'first_page' %}">Home</a>
+                  <a id="nav" href="{% url 'post_list' %}">post</a>
+                  <a id="nav" href="{% url 'logout' %}">logout</a>
+                  <a id="nav" href="{% url 'post_new' %}">Add post</a>
+                  
+                  <a id="nav" href="{% url 'profile_edit' %}">profile</a>
+                  
+                  <a id="nav" href="{% url 'profile' %}">my post</a>
+                  <a href="#" class="fa fa-facebook"></a>
+                </div>
+    
             {% else %}
-            <div class="col-lg-2">
-                <nav class="navbar bg-light">
-                 <ul class="navbar-nav">
-                    <li class="nav-item1">
-                        <a class="nav-link" href="#" id="color_id">TalkTime</a>
-                    </li>
-                    <li class="nav-item2">
-                        <a class="nav-link" href="{% url 'first_page' %}">home</a>
-                   </li>
-                    <li class="nav-item3">
-                         <a class="nav-link" href="{% url 'post_list' %}">Posts</a>
-                    </li>
-                    <li class="nav-item4">
-                        <a class="nav-link" href="{% url 'login' %}">login</a>
-                    </li>
-                    <li class="nav-item5">
-                        <a class="nav-link" href="{% url 'register' %}">Register</a>
-                    </li>
-                 </ul>
-             </nav>
-            </div>
+            <div class="topnav">
+                <a id="logo">slacker</a>
+                <a id="nav" href="{% url 'first_page' %}">Home</a>
+                <a id="nav" href="{% url 'post_list' %}">post</a>
+                <a id="nav" href="{% url 'login' %}">login</a>
+                <a id="nav" href="{% url 'register' %}">Register</a>
+                <a href="#" class="fa fa-facebook"></a>
+              </div>
             {% endif %}
-            <div class="col-lg-10">
+            <div class="col-md-">
                
                 {% block content %}
                 {% endblock %}
