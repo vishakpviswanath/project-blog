@@ -11,7 +11,9 @@
                     <h4><a href="{% url 'author_profile' username=post.author %}" id="post_author">{{post.author}}</a></h4>
                     <h2><a href="{% url 'post_detail' pk=post.pk %}" id="post_title">{{post.title}}</a></h2>
                     <p id="published_date">published date:{{post.published_date}}</p>
-                   
+                     {% if post.image %}
+                        <img src="{{ post.image.url }}" alt="{{post.title}}">
+                     {% endif %}   
                     <P id="color_content">{{post.text|linebreaksbr}}</P>
                 </div>
                    

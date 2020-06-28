@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.utils import timezone
 from .models import Post
 from django.shortcuts import render, get_object_or_404
-from .forms import PostForm, EditProfile
+from .forms import PostForm, EditProfile, ImageForm
 from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
@@ -73,13 +73,14 @@ def post_list(request):
 
 def post_detail(request, pk):
       post=get_object_or_404(Post, pk=pk)
-      return render(request, 'blog/post_detail.html', {'post': post})
+      user= Post.image
+      return render(request, 'blog/post_detail.html', {'post': post ,'user':user})
 
 
 @login_required
 def post_new(request):
       if request.method =="POST":
-            form = PostForm(request.POST)
+            form = PostForm(request.POST, request.FILES)
             if form.is_valid():
                   post = form.save(commit=False)
                   post.author = request.user
@@ -119,5 +120,23 @@ def register(request):
             form = UserCreationForm()
 
             args = {'form':form}
-            return render(request, 'blog/reg_form.html', args)      
+            return render(request, 'blog/reg_form.html', args)   
 
+def pictures(request):
+    if request.method == 'GET': 
+  
+      # getting all the objects of hotel. 
+      pics = Post.objects.all()  
+      return render(request, 'blog/pictures.html', 
+                  {'pics' : pics})
+      
+
+def update_pic(request):
+      if request.method =='POST':
+            form = ImageForm(request.POST,request.FILES)
+            if form.is_valid():
+                  form.save()
+                  return redirect('pictures')
+      else:
+            form = ImageForm()      
+      return render(request, 'blog/pic_update.html',{'form':form})

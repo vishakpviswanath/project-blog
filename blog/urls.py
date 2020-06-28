@@ -3,7 +3,8 @@ from . import views
 from django.conf.urls import url
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth import views as auth_views
-
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -20,4 +21,6 @@ urlpatterns = [
     path('author_profile/<str:username>/', views.author_profile, name='author_profile'),
     path('profile/edit/', views.profile_edit, name='profile_edit'),
     path('change-password/', views.change_password, name='change_password'),
-]
+    path('pic_update/',views.update_pic, name='pic'),
+    path('pictures/', views.pictures, name='pictures'),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
