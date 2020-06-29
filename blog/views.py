@@ -73,8 +73,10 @@ def post_list(request):
 
 def post_detail(request, pk):
       post=get_object_or_404(Post, pk=pk)
-      user= Post.image
-      return render(request, 'blog/post_detail.html', {'post': post ,'user':user})
+      if request.method == 'GET': 
+            pics = Post.objects.all()  
+            print(pics)
+            return render(request, 'blog/post_detail.html', {'post': post ,'pics':pics})
 
 
 @login_required
@@ -125,8 +127,9 @@ def register(request):
 def pictures(request):
     if request.method == 'GET': 
   
-      # getting all the objects of hotel. 
+      
       pics = Post.objects.all()  
+      print(pics)
       return render(request, 'blog/pictures.html', 
                   {'pics' : pics})
       
@@ -135,8 +138,11 @@ def update_pic(request):
       if request.method =='POST':
             form = ImageForm(request.POST,request.FILES)
             if form.is_valid():
-                  form.save()
-                  return redirect('pictures')
+                  post = form.save(commit=False)
+                  post.author = str(request.user)
+                  post.published_date = timezone.now()
+                  post.save()
+                  return redirect('post_detail', pk=post.pk)
       else:
             form = ImageForm()      
       return render(request, 'blog/pic_update.html',{'form':form})

@@ -8,9 +8,11 @@
         {% endif %}
         <h2>{{ post.title }}</h2>
         <h2>image</h2>
+            
         {% if post.image %}
-            <img src="{{ post.image.url }}">
-        {% endif %}    
+            
+            <img src="{{ post.image.url }}" class="img-responsive" style="width: 50%; float: left; margin-right: 10px;" /> 
+        {% endif %}
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
 {% endblock %}
